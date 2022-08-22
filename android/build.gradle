@@ -15,7 +15,7 @@ buildscript {
             classpath 'com.google.gms:google-services:4.3.13'
         }
         if (taskName.contains("staging")){
-            classpath 'com.huawei.agconnect:agcp:1.4.2.301'
+            classpath 'com.huawei.agconnect:agcp:1.5.2.300'
         }
     }
 }
