@@ -15,6 +15,15 @@ dependencies:
   flutter_localizations:
     sdk: flutter
   intl: ^0.17.0
+  get_it: any
+  injectable: any
+  analytics_service_interface:
+    path: local_plugins/interface/analytics_service_interface
+    #### GMS
+  analytics_service:
+    path: local_plugins/gms/analytics_service
+    #### HMS
+    # path: local_plugins/hms/analytics_service
 
 dev_dependencies:
   bloc_test: ^9.1.0

@@ -8,10 +8,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:mowi/counter/counter.dart';
-import 'package:mowi/huawei/huaweipage.dart';
+
 import 'package:mowi/l10n/l10n.dart';
 
-import '../../google/googlepage.dart';
 
 class CounterPage extends StatelessWidget {
   const CounterPage({super.key});
@@ -34,27 +33,33 @@ class CounterView extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(title: Text(l10n.counterAppBarTitle)),
       body:  Center(child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           CounterText(),
-          MaterialButton(child: Text("Page 1"), onPressed: () => MaterialPageRoute(builder: (_) => HuaweiPage())),
-          MaterialButton(child: Text("Page 2"), onPressed: () => MaterialPageRoute(builder: (_) => GooglePage())),
-        ],
+          TextButton(onPressed: (){
+            //Obtener token
+          }, child: Text("Get token")),
+          TextButton(onPressed: (){
+            //Escuchar a push notifications
+          }, child: Text("Escuchar mensajes"))
+        ],  
       )),
-      floatingActionButton: Column(
-        mainAxisAlignment: MainAxisAlignment.end,
-        crossAxisAlignment: CrossAxisAlignment.end,
-        children: [
-          FloatingActionButton(
-            onPressed: () => context.read<CounterCubit>().increment(),
-            child: const Icon(Icons.add),
-          ),
-          const SizedBox(height: 8),
-          FloatingActionButton(
-            onPressed: () => context.read<CounterCubit>().decrement(),
-            child: const Icon(Icons.remove),
-          ),
-        ],
-      ),
+      // floatingActionButton: Column(
+      //   mainAxisAlignment: MainAxisAlignment.end,
+      //   crossAxisAlignment: CrossAxisAlignment.end,
+      //   children: [
+      //     FloatingActionButton(
+      //       onPressed: () => context.read<CounterCubit>().increment(),
+      //       child: const Icon(Icons.add),
+      //     ),
+      //     const SizedBox(height: 8),
+      //     FloatingActionButton(
+      //       onPressed: () => context.read<CounterCubit>().decrement(),
+      //       child: const Icon(Icons.remove),
+      //     ),
+      //   ],
+      // ),
     );
   }
 }
